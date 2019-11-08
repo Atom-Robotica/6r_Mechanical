@@ -1,0 +1,7 @@
+<launch>
+  <rosparam command="load" file="$(find fusion2urdf)/launch/Gripper_Design_controller.yaml"/>
+  <node args=" joint_state_controller" name="controller_spawner" ns="Gripper_Design" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
+  <node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
+    <remap from="/joint_states" to="/Gripper_Design/joint_states"/>
+  </node>
+</launch>

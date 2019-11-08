@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="Gripper_Design">
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.090968 -0.205928 -0.00054"/>
+    <mass value="0.014071"/>
+    <inertia ixx="8e-06" ixy="0.0" ixz="-1e-06" iyy="7e-06" iyz="1e-06" izz="7e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fusion2urdf/Gripper_Design/bin_stl/base_link_m-binary.stl"/>
+    </geometry>
+    <material name="silver">
+      <color rgba="1 0 0 1"/>
+    </material>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://fusion2urdf/Gripper_Design/bin_stl/base_link_m-binary.stl"/>
+    </geometry>
+  </collision>
+</link>
+<gazebo>
+  <plugin filename="libgazebo_ros_control.so" name="control"/>
+</gazebo>
+</robot>
